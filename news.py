@@ -4,16 +4,22 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 import xml.etree.ElementTree as ET
 
-# 1. 配置新聞來源 (你可以隨時增加)
+# 1. 配置專業財經新聞來源 (針對大馬信託顧問優化)
 RSS_CONFIG = {
-    '🔥 馬來西亞財經 (推薦)': [
-        {'name': 'The Star Business', 'url': 'https://www.thestar.com.my/rss/business/business-news/'},
-        {'name': 'Edge Markets', 'url': 'https://www.theedgemarkets.com/rss/corporate.xml'},
+    '🇲🇾 Fokus Malaysia (Wajib Baca)': [
+        {'name': 'The Edge Malaysia 🏆', 'url': 'https://www.theedgemarkets.com/rss/corporate.xml'},
+        {'name': 'Bernama Business (Official)', 'url': 'https://www.bernama.com/en/rss/news.php?cat=biz'},
+        {'name': 'The Star BizNews', 'url': 'https://www.thestar.com.my/rss/business/business-news/'},
+        {'name': 'Fintech News Malaysia', 'url': 'https://fintechnews.my/feed/'},
+        # BNM 通常不提供新聞 RSS，這裡改用其官方公告或新聞稿來源
+        {'name': 'Bank Negara Official', 'url': 'https://www.bnm.gov.my/news-releases?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_XGzYvC4lYm7O&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=getRSS&p_p_cacheability=cacheLevelPage'},
     ],
-    '🌏 全球財經與頭條': [
-        {'name': '聯合頭條', 'url': 'https://udn.com/rssfeed/news/2/6638?ch=news'},
-        {'name': 'BBC World', 'url': 'http://feeds.bbci.co.uk/news/world/rss.xml'},
-        {'name': 'CNBC Finance', 'url': 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664'},
+    '🌎 Fokus Global (Fund Review)': [
+        {'name': 'CNBC Markets 🚀', 'url': 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069'},
+        {'name': 'Reuters Business', 'url': 'https://www.reutersagency.com/feed/?best-topics=business&post_type=best'},
+        {'name': 'Bloomberg Markets', 'url': 'https://www.bloomberg.com/politics2/api/embed/sites/businessweek/rss-feed'},
+        {'name': 'Yahoo Finance', 'url': 'https://finance.yahoo.com/news/rssindex'},
+        {'name': 'Investing.com News', 'url': 'https://www.investing.com/rss/news_285.rss'},
     ]
 }
 
