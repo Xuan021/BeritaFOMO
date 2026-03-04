@@ -30,7 +30,7 @@ def fetch_news(category, source):
             items.append(f'<li><a href="{link}" target="_blank">{title}</a> <span class="source">[{source["name"]}]</span></li>')
         return category, items
     except Exception as e:
-        return category, [f<li>無法讀取 {source['name']}: {str(e)}</li>]
+        return category, [f"<li>無法讀取 {source['name']}: {str(e)}</li>"]
 
 def generate_html():
     all_content = ""
