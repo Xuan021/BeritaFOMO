@@ -1,0 +1,31 @@
+name: Update News
+
+on:
+  schedule:
+    - cron: '0 0,8,16 * * *' # 每天早上 8 點、下午 4 點、午夜自動更新 (UTC時間)
+  workflow_dispatch:      # 允許你手動按按鈕更新
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout代碼
+        uses: actions/checkout@v3
+
+      - name: 安裝Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 安裝依賴工具
+        run: pip install -r requirements.txt
+
+      - name: 執行抓取程式
+        run: python news.py
+
+      - name: 部署到GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages # 這是網頁存放的分支
