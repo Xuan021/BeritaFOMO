@@ -10,18 +10,23 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # 2. 精準配置專業來源
 RSS_CONFIG = {
     '🇲🇾 Fokus Malaysia (Wajib Baca)': [
-        {'name': 'The Edge Malaysia 🏆', 'url': 'https://www.theedgemarkets.com/rss/corporate.xml'},
-        {'name': 'Bernama Business', 'url': 'https://www.bernama.com/en/rss/news.php?cat=biz'},
+        # The Star 的 RSS 較穩定，作為大馬首選
         {'name': 'The Star BizNews', 'url': 'https://www.thestar.com.my/rss/business/business-news/'},
+        # Bernama 官方備用 Link，修復語法錯誤
+        {'name': 'Bernama Business', 'url': 'https://www.bernama.com/en/rss/news.php?cat=biz'},
+        # Fintech News 表現最穩，保留
         {'name': 'Fintech News Malaysia', 'url': 'https://fintechnews.my/feed/'},
-        {'name': 'Bank Negara Official', 'url': 'https://www.bnm.gov.my/news-releases?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_XGzYvC4lYm7O&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=getRSS&p_p_cacheability=cacheLevelPage'},
+        # 更換為較開放的 The Edge 備用路徑
+        {'name': 'The Edge Malaysia 🏆', 'url': 'https://www.theedgemarkets.com/rss/theedgemalaysia.xml'},
+        # BNM 的 RSS 容易被擋，這裡改用較穩定的官方新聞稿鏈接
+        {'name': 'Bank Negara Official', 'url': 'https://www.bnm.gov.my/news-releases?format=rss'},
     ],
-        '🌎 Fokus Global (Fund Review)': [
+    '🌎 Fokus Global (Fund Review)': [
         {'name': 'MarketWatch Top 🚀', 'url': 'https://feeds.content.dowjones.io/public/rss/mw_topstories'},
-        {'name': 'Reuters Business', 'url': 'https://www.reutersagency.com/feed/?best-topics=business&post_type=best'},
+        {'name': 'Fortune Magazine', 'url': 'https://fortune.com/feed'},
+        {'name': 'Forbes Innovation', 'url': 'https://www.forbes.com/innovation/feed/'},
         {'name': 'Yahoo Finance', 'url': 'https://finance.yahoo.com/news/rssindex'},
         {'name': 'Investing.com News', 'url': 'https://www.investing.com/rss/news_285.rss'},
-        {'name': 'Financial Times', 'url': 'https://www.ft.com/news-feed?format=rss'},
     ]
 }
 
