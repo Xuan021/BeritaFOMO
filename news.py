@@ -16,11 +16,12 @@ RSS_CONFIG = {
         {'name': 'Fintech News Malaysia', 'url': 'https://fintechnews.my/feed/'},
         {'name': 'Bank Negara Official', 'url': 'https://www.bnm.gov.my/news-releases?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_XGzYvC4lYm7O&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=getRSS&p_p_cacheability=cacheLevelPage'},
     ],
-    '🌎 Fokus Global (Fund Review)': [
-        {'name': 'CNBC Markets 🚀', 'url': 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069'},
+        '🌎 Fokus Global (Fund Review)': [
+        {'name': 'MarketWatch Top 🚀', 'url': 'https://feeds.content.dowjones.io/public/rss/mw_topstories'},
         {'name': 'Reuters Business', 'url': 'https://www.reutersagency.com/feed/?best-topics=business&post_type=best'},
         {'name': 'Yahoo Finance', 'url': 'https://finance.yahoo.com/news/rssindex'},
         {'name': 'Investing.com News', 'url': 'https://www.investing.com/rss/news_285.rss'},
+        {'name': 'Financial Times', 'url': 'https://www.ft.com/news-feed?format=rss'},
     ]
 }
 
