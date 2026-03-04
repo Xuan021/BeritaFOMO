@@ -11,7 +11,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 RSS_CONFIG = {
     '🇲🇾 Fokus Malaysia (Wajib Baca)': [
         # The Star 的 RSS 較穩定，作為大馬首選
-        {'name': 'The Star BizNews', 'url': 'https://www.thestar.com.my/rss/business/business-news/'},
+        {'name': 'The Star BizNews', 'url': 'https://www.thestar.com.my/business'},
         # Bernama 官方備用 Link，修復語法錯誤
         {'name': 'Bernama Business', 'url': 'https://www.bernama.com/en/rss/news.php?cat=biz'},
         # Fintech News 表現最穩，保留
