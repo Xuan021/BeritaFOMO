@@ -4,32 +4,213 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BeritaFOMO - Professional Insight</title>
+        <title>BeritaFOMO v3.0</title>
         <style>
-            :root { --primary: #1a2a6c; --accent: #b21f1f; --gold: #fdbb2d; }
-            body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; padding: 15px; background: #f0f2f5; color: #333; }
-            .container { max-width: 1100px; margin: auto; }
-            header { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 30px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
-            .category-title { color: var(--primary); border-left: 6px solid var(--gold); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
-            .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
-            .news-card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-            .news-card h3 { margin-top: 0; color: #444; font-size: 1.1em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-            ul { list-style: none; padding: 0; margin: 0; }
-            li { padding: 12px 0; border-bottom: 1px solid #f9f9f9; }
-            li:last-child { border: none; }
-            a { text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 0.95em; display: block; line-height: 1.4; }
-            a:hover { color: var(--accent); }
-            .source { display: inline-block; margin-top: 6px; font-size: 0.7em; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+            :root { --bg: #f0f2f5; --card: #ffffff; --text: #333; --primary: #1a2a6c; --gold: #fdbb2d; --meta: #777; }
+            body.dark-mode { --bg: #121212; --card: #1e1e1e; --text: #e0e0e0; --primary: #4a90e2; --meta: #aaa; }
+            
+            body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: 0.3s; padding: 15px; margin: 0; }
+            .container { max-width: 1200px; margin: auto; }
+            
+            header { background: linear-gradient(135deg, #1a2a6c, #b21f1f); color: white; padding: 40px 20px; border-radius: 0 0 30px 30px; text-align: center; margin: -15px -15px 30px -15px; }
+            .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; justify-content: center; }
+            input#search { padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; width: 300px; outline: none; }
+            
+            .btn { padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer; background: var(--primary); color: white; font-weight: 600; }
+            .category-title { border-left: 6px solid var(--gold); padding-left: 15px; margin-top: 40px; }
+            
+            .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+            .news-card { background: var(--card); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+            
+            .news-item { padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+            .news-item a { text-decoration: none; color: var(--text); font-weight: 600; display: block; margin: 8px 0; font-size: 1.05em; }
+            .meta { font-size: 0.85em; color: var(--meta); }
+            
+            .tag { font-size: 0.7em; padding: 3px 10px; border-radius: 10px; color: white; text-transform: uppercase; font-weight: bold; }
+            .tag-crypto { background: #f39c12; } .tag-stocks { background: #27ae60; } .tag-banking { background: #2980b9; } .tag-investment { background: #8e44ad; } .tag-general { background: #95a5a6; }
+            
+            @media (max-width: 600px) { input#search { width: 100%; } }
         </style>
     </head>
-    <body>
+    <body class="">
         <div class="container">
             <header>
-                <h1>📊 BeritaFOMO: Insight Kewangan</h1>
-                <p>Data dikemaskini secara automatik untuk penasihat profesional.</p>
+                <h1>📊 BeritaFOMO v3.0</h1>
+                <p>Smart Intelligence for Public Mutual Consultants</p>
+                <small>Last Sync: 2026-03-04 06:23</small>
             </header>
-            <h2 class="category-title">🇲🇾 Fokus Malaysia (Wajib Baca)</h2><div class="card-grid"><div class="news-card"><h3>Fintech News Malaysia</h3><ul><li><a href="https://fintechnews.my/56933/various/sc-board-appointment/" target="_blank">SC Appoints Legal Veteran and BNM Deputy Governor to Board</a><span class="source">Fintech News Malaysia</span></li><li><a href="https://fintechnews.my/56921/various/malaysia-sustainable-taxonomy/" target="_blank">Malaysia Opens Consultation on Proposed Sustainable Finance Taxonomy</a><span class="source">Fintech News Malaysia</span></li><li><a href="https://fintechnews.my/56918/payments-remittance-malaysia/shopback-pay-malaysia/" target="_blank">ShopBack Pay to Be Discontinued in Malaysia from 25 March</a><span class="source">Fintech News Malaysia</span></li><li><a href="https://fintechnews.my/56913/fintech-lending-malaysia/malaysia-bnpl-exposure/" target="_blank">Malaysia’s BNPL Loans Hit RM4.9B as Exposure Holds at 0.3% of Household Debt</a><span class="source">Fintech News Malaysia</span></li><li><a href="https://fintechnews.my/56910/digital-banking-news-malaysia/boost-bank-insurance/" target="_blank">Boost Bank Now Offers Insurance Plans Starting From RM15</a><span class="source">Fintech News Malaysia</span></li><li><a href="https://fintechnews.my/56896/digital-banking-news-malaysia/aeon-bank-zakat/" target="_blank">AEON Bank Now Offers In-App Zakat Payments Across 11 Categories</a><span class="source">Fintech News Malaysia</span></li></ul></div></div><h2 class="category-title">🌎 Fokus Global (Fund Review)</h2><div class="card-grid"><div class="news-card"><h3>MarketWatch Top 🚀</h3><ul><li><a href="https://www.marketwatch.com/story/modernas-stock-rallies-more-than-10-as-deal-over-a-patent-dispute-clears-vaccine-pipeline-d34e6793?mod=mw_rss_topstories" target="_blank">Moderna’s stock rallies as deal over a patent dispute clears vaccine pipeline</a><span class="source">MarketWatch Top 🚀</span></li><li><a href="https://www.marketwatch.com/story/my-rude-ungrateful-relative-gave-her-lawyer-power-of-attorney-and-has-lived-to-regret-it-should-i-get-involved-5db8088d?mod=mw_rss_topstories" target="_blank">My rude, ungrateful relative gave her lawyer power of attorney — and has lived to regret it. Should I get involved?</a><span class="source">MarketWatch Top 🚀</span></li><li><a href="https://www.marketwatch.com/story/crowdstrike-gives-upbeat-earnings-outlook-as-ai-raises-the-stakes-around-cyberthreats-087a4b2e?mod=mw_rss_topstories" target="_blank">CrowdStrike gives upbeat earnings outlook as AI raises the stakes around cyberthreats</a><span class="source">MarketWatch Top 🚀</span></li><li><a href="https://www.marketwatch.com/story/ross-stores-touts-very-strong-start-for-spring-shopping-boosting-case-for-a-retail-rebound-4d8f168b?mod=mw_rss_topstories" target="_blank">Ross Stores touts ‘very strong start’ for spring shopping, boosting case for a retail rebound</a><span class="source">MarketWatch Top 🚀</span></li><li><a href="https://www.marketwatch.com/story/his-children-might-resent-her-my-widowed-mother-has-a-life-estate-does-that-override-a-prenup-and-will-0e217484?mod=mw_rss_topstories" target="_blank">My mother will live in her second husband’s house if he dies before her. Will his kids be hopping mad?</a><span class="source">MarketWatch Top 🚀</span></li><li><a href="https://www.marketwatch.com/story/wall-streets-fear-gauge-is-rising-as-iran-conflict-escalates-heres-what-investors-should-watch-543b5d5c?mod=mw_rss_topstories" target="_blank">Wall Street’s ‘fear gauge’ is rising as Iran conflict escalates. Here’s what investors should watch.</a><span class="source">MarketWatch Top 🚀</span></li></ul></div><div class="news-card"><h3>Fortune Magazine</h3><ul><li><a href="https://fortune.com/2025/10/30/harvard-professor-how-much-sleep-do-you-really-need-8-hours/" target="_blank">Harvard professor calls out ‘lie’ of needing 8 hours of sleep a night, says it’s Industrial Era ‘nonsense’</a><span class="source">Fortune Magazine</span></li><li><a href="https://fortune.com/article/bed-sizes-and-dimensions/" target="_blank">A Guide to All Mattress Dimensions: How to Choose the Right Size Bed</a><span class="source">Fortune Magazine</span></li><li><a href="https://fortune.com/article/how-to-choose-a-mattress/" target="_blank">How to Choose a Mattress: The Ultimate Guide</a><span class="source">Fortune Magazine</span></li><li><a href="https://fortune.com/article/best-sleeping-position/" target="_blank">What Is the Best Sleeping Position?</a><span class="source">Fortune Magazine</span></li><li><a href="https://fortune.com/article/mattress-firmness-scale/" target="_blank">Mattress Firmness Scale: How Firm Should Your Bed Be?</a><span class="source">Fortune Magazine</span></li><li><a href="https://fortune.com/2026/03/03/qualcomm-ceo-resistance-is-futile-6g-mobile-revolution-approaches/" target="_blank">Qualcomm CEO: ‘Resistance is futile’ as 6G mobile revolution approaches</a><span class="source">Fortune Magazine</span></li></ul></div><div class="news-card"><h3>Forbes Innovation</h3><ul><li><a href="https://www.forbes.com/sites/olliebarder/2026/03/04/aniplexs-atsuhiro-iwakami-on-demon-slayer-and-the-value-of-creativity/" target="_blank">Aniplex’s Atsuhiro Iwakami On ‘Demon Slayer’ And The Value Of Creativity</a><span class="source">Forbes Innovation</span></li><li><a href="https://www.forbes.com/sites/krisholt/2026/03/03/nyt-mini-crossword-today-extra-hints-answers-wednesday-march-4-mentee-of-yoda-plow-pullers-jump-for-joy/" target="_blank">NYT Mini Crossword Answers For Wednesday, March 4</a><span class="source">Forbes Innovation</span></li><li><a href="https://www.forbes.com/sites/paultassi/2026/03/03/todays-nyt-strands-hints-spangram-answers-wednesday-march-4-piece-of-cake/" target="_blank">Today’s NYT Strands Hints, Spangram, Answers: Wednesday, March 4 (Piece Of Cake)</a><span class="source">Forbes Innovation</span></li><li><a href="https://www.forbes.com/sites/erikkain/2026/03/03/wordle-wednesday-answer-march-4/" target="_blank">Today’s Wordle #1719 Hints And Answer For Wednesday, March 4</a><span class="source">Forbes Innovation</span></li><li><a href="https://www.forbes.com/sites/erikkain/2026/03/03/nyt-pips-answers-wednesday-march-4/" target="_blank">NYT Pips Today: Hints, Answers And Walkthrough For Wednesday, March 4</a><span class="source">Forbes Innovation</span></li><li><a href="https://www.forbes.com/sites/johnkoetsier/2026/03/03/will-ai-kill-hollywood-this-legendary-exec-says-lean-in-hard-now/" target="_blank">Will AI Kill Hollywood? This Legendary Exec Says Lean In Hard Now</a><span class="source">Forbes Innovation</span></li></ul></div><div class="news-card"><h3>Yahoo Finance</h3><ul><li><a href="https://finance.yahoo.com/news/mark-carney-davos-speech-highlighted-175000766.html" target="_blank">How Mark Carney’s Davos speech highlighted the new world order: ‘We are in the midst of a rupture, not a transition’</a><span class="source">Yahoo Finance</span></li><li><a href="https://finance.yahoo.com/news/2-nuclear-energy-stocks-buy-175000060.html" target="_blank">2 Nuclear Energy Stocks to Buy in March</a><span class="source">Yahoo Finance</span></li><li><a href="https://finance.yahoo.com/news/h-c-wainwright-sees-opportunity-174413873.html" target="_blank">H.C. Wainwright Sees Opportunity After Fiat Chrysler Ends Offtake Agreement With Westwater Resources, Inc. (WWR)</a><span class="source">Yahoo Finance</span></li><li><a href="https://finance.yahoo.com/news/hsbc-notes-steady-progress-toward-174416524.html" target="_blank">HSBC Notes Steady Progress Toward Wide Market Adoption for QuantumScape Corporation (QS)</a><span class="source">Yahoo Finance</span></li><li><a href="https://finance.yahoo.com/news/bofa-highlights-positive-outlook-freeport-174405572.html" target="_blank">BofA Highlights Positive Outlook for Freeport-McMoRan Inc. (FCX) on 2026 Metal Prices</a><span class="source">Yahoo Finance</span></li><li><a href="https://finance.yahoo.com/news/price-target-increased-albemarle-corporation-174415060.html" target="_blank">Price Target Increased on Albemarle Corporation (ALB) Amid Sustained Lithium Market Strength</a><span class="source">Yahoo Finance</span></li></ul></div><div class="news-card"><h3>Investing.com News</h3><ul><li><a href="https://www.investing.com/news/stock-market-news/deutsche-bank-forecasts-sp-500-to-hit-7000-by-end-of-2025-3741586" target="_blank">Deutsche Bank forecasts S&P 500 to hit 7000 by end of 2025</a><span class="source">Investing.com News</span></li><li><a href="https://www.investing.com/news/economy/trumps-tariffs-fed-minutes-rumbles-bitcoin-buy--whats-moving-markets-3741453" target="_blank">Trump's tariffs, Fed minutes, Rumble's Bitcoin buy - what's moving markets</a><span class="source">Investing.com News</span></li><li><a href="https://www.investing.com/news/cryptocurrency-news/bitcoin-price-today-slips-to-94k-as-risk-appetite-sours-on-trump-tariff-threat-3741330" target="_blank">Bitcoin price today: slips to $94k as risk appetite sours on Trump tariff threat</a><span class="source">Investing.com News</span></li><li><a href="https://www.investing.com/news/economy/2025-macro-outlook-for-the-us-is-murky-at-best-says-deutsche-bank-3741435" target="_blank">2025 macro outlook for the US is 'murky at best' says Deutsche Bank</a><span class="source">Investing.com News</span></li><li><a href="https://www.investing.com/news/politics/trump-says-he-will-impose-additional-10-tariffs-on-china-over-drug-inflow-3741069" target="_blank">Trump says he will impose additional 10% tariffs on China over drug inflow</a><span class="source">Investing.com News</span></li><li><a href="https://www.investing.com/news/stock-market-news/asia-stocks-fall-after-trump-threatens-tariffs-japans-nikkei-leads-losses-3741249" target="_blank">Asia stocks fall after Trump threatens tariffs, Japan's Nikkei leads losses</a><span class="source">Investing.com News</span></li></ul></div></div>
+
+            <div class="controls">
+                <input type="text" id="search" placeholder="Search news or topics..." onkeyup="filterNews()">
+                <button class="btn" onclick="toggleDarkMode()">🌓 Mode</button>
+            </div>
+
+            <h2 class="category-title">🇲🇾 Fokus Malaysia</h2><div class="card-grid"><div class="news-card"><h3>Fintech News MY</h3>
+                    <div class="news-item" data-category="General">
+                        <span class="tag tag-general">General</span>
+                        <a href="https://fintechnews.my/56921/various/malaysia-sustainable-taxonomy/" target="_blank">Malaysia Opens Consultation on Proposed Sustainable Finance Taxonomy</a>
+                        <div class="meta">
+                            <span class="source-name">Fintech News MY</span> • 
+                            <span class="date">Tue, 03 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://fintechnews.my/56910/digital-banking-news-malaysia/boost-bank-insurance/" target="_blank">Boost Bank Now Offers Insurance Plans Starting From RM15</a>
+                        <div class="meta">
+                            <span class="source-name">Fintech News MY</span> • 
+                            <span class="date">Tue, 03 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://fintechnews.my/56896/digital-banking-news-malaysia/aeon-bank-zakat/" target="_blank">AEON Bank Now Offers In-App Zakat Payments Across 11 Categories</a>
+                        <div class="meta">
+                            <span class="source-name">Fintech News MY</span> • 
+                            <span class="date">Mon, 02 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://fintechnews.my/56754/fintech-lending-malaysia/tras-car-loans/" target="_blank">Tras Aims to Streamline Multi-Bank Car Loan Submissions for Dealers</a>
+                        <div class="meta">
+                            <span class="source-name">Fintech News MY</span> • 
+                            <span class="date">Mon, 02 Mar 2026</span>
+                        </div>
+                    </div>
+                </div></div><h2 class="category-title">🌎 Fokus Global</h2><div class="card-grid"><div class="news-card"><h3>MarketWatch</h3>
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://www.marketwatch.com/story/modernas-stock-rallies-more-than-10-as-deal-over-a-patent-dispute-clears-vaccine-pipeline-d34e6793?mod=mw_rss_topstories" target="_blank">Moderna’s stock rallies as deal over a patent dispute clears vaccine pipeline</a>
+                        <div class="meta">
+                            <span class="source-name">MarketWatch</span> • 
+                            <span class="date">Wed, 04 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://www.marketwatch.com/story/my-rude-ungrateful-relative-gave-her-lawyer-power-of-attorney-and-has-lived-to-regret-it-should-i-get-involved-5db8088d?mod=mw_rss_topstories" target="_blank">My rude, ungrateful relative gave her lawyer power of attorney — and has lived to regret it. Should I get involved?</a>
+                        <div class="meta">
+                            <span class="source-name">MarketWatch</span> • 
+                            <span class="date">Wed, 04 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://www.marketwatch.com/story/software-stocks-just-quietly-trounced-chip-stocks-to-a-historic-extent-but-dont-get-too-excited-5babf59c?mod=mw_rss_topstories" target="_blank">Software stocks just quietly trounced chip stocks to a historic extent — but don’t get too excited</a>
+                        <div class="meta">
+                            <span class="source-name">MarketWatch</span> • 
+                            <span class="date">Tue, 03 Mar 2026</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://www.marketwatch.com/story/the-stock-markets-wild-swings-are-sending-a-message-about-the-escalating-iran-conflict-9dc81cac?mod=mw_rss_topstories" target="_blank">The stock market’s wild swings are sending a message about the escalating Iran conflict</a>
+                        <div class="meta">
+                            <span class="source-name">MarketWatch</span> • 
+                            <span class="date">Tue, 03 Mar 2026</span>
+                        </div>
+                    </div>
+                </div><div class="news-card"><h3>Yahoo Finance</h3>
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-lenders-with-the-best-rates-this-week-march-2-2026-170834872.html" target="_blank">Mortgage lenders with the best rates this week, March 2, 2026: Best rate drops to 5.375%</a>
+                        <div class="meta">
+                            <span class="source-name">Yahoo Finance</span> • 
+                            <span class="date">2025-11-03T17:08</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://finance.yahoo.com/news/sofi-drops-44-buy-stock-183857437.html" target="_blank">SoFi Drops 44%. Should You Buy the Stock Now or Stay Away?</a>
+                        <div class="meta">
+                            <span class="source-name">Yahoo Finance</span> • 
+                            <span class="date">2026-03-02T18:38</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://www.barrons.com/articles/private-credit-stocks-senior-loan-etf-27d5eee5?siteid=yhoof2&yptr=yahoo" target="_blank">Private Credit Has Stocks on Edge. Beware This Loan Fund.</a>
+                        <div class="meta">
+                            <span class="source-name">Yahoo Finance</span> • 
+                            <span class="date">2026-03-02T18:48</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="General">
+                        <span class="tag tag-general">General</span>
+                        <a href="https://finance.yahoo.com/news/citi-sees-oil-spiking-above-184504755.html" target="_blank">Citi sees oil spiking above $80 as Iran conflict rattles market</a>
+                        <div class="meta">
+                            <span class="source-name">Yahoo Finance</span> • 
+                            <span class="date">2026-03-02T18:45</span>
+                        </div>
+                    </div>
+                </div><div class="news-card"><h3>Investing.com</h3>
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://www.investing.com/news/stock-market-news/deutsche-bank-forecasts-sp-500-to-hit-7000-by-end-of-2025-3741586" target="_blank">Deutsche Bank forecasts S&P 500 to hit 7000 by end of 2025</a>
+                        <div class="meta">
+                            <span class="source-name">Investing.com</span> • 
+                            <span class="date">2024-11-26 10:47</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Crypto">
+                        <span class="tag tag-crypto">Crypto</span>
+                        <a href="https://www.investing.com/news/economy/trumps-tariffs-fed-minutes-rumbles-bitcoin-buy--whats-moving-markets-3741453" target="_blank">Trump's tariffs, Fed minutes, Rumble's Bitcoin buy - what's moving markets</a>
+                        <div class="meta">
+                            <span class="source-name">Investing.com</span> • 
+                            <span class="date">2024-11-26 08:55</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Banking">
+                        <span class="tag tag-banking">Banking</span>
+                        <a href="https://www.investing.com/news/economy/2025-macro-outlook-for-the-us-is-murky-at-best-says-deutsche-bank-3741435" target="_blank">2025 macro outlook for the US is 'murky at best' says Deutsche Bank</a>
+                        <div class="meta">
+                            <span class="source-name">Investing.com</span> • 
+                            <span class="date">2024-11-26 08:26</span>
+                        </div>
+                    </div>
+                
+                    <div class="news-item" data-category="Stocks">
+                        <span class="tag tag-stocks">Stocks</span>
+                        <a href="https://www.investing.com/news/stock-market-news/asia-stocks-fall-after-trump-threatens-tariffs-japans-nikkei-leads-losses-3741249" target="_blank">Asia stocks fall after Trump threatens tariffs, Japan's Nikkei leads losses</a>
+                        <div class="meta">
+                            <span class="source-name">Investing.com</span> • 
+                            <span class="date">2024-11-26 03:31</span>
+                        </div>
+                    </div>
+                </div></div>
         </div>
+
+        <script>
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            }
+            
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+
+            function filterNews() {
+                let val = document.getElementById('search').value.toLowerCase();
+                let items = document.querySelectorAll('.news-item');
+                items.forEach(item => {
+                    let text = item.innerText.toLowerCase();
+                    item.style.display = text.includes(val) ? "block" : "none";
+                });
+            }
+        </script>
     </body>
     </html>
     
