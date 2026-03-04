@@ -87,3 +87,6 @@ def generate_html():
     </body>
     </html>
     """
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_template)
+
